@@ -18,4 +18,5 @@ jobs:
           port: ${{ secrets.PORT }}
           script:
 #            docker images | grep stock | xargs docker rmi
-            docker build -t stock:v1 ./docker
+#            docker build -t stock:v1 ./docker
+              curl cip.cc
