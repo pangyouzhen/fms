@@ -1,0 +1,2 @@
+00 19 * * * sh cd /data/project/stock && python main.py
+0 0 1 1 * cd /data/project/stock && python ./stock/get_tool_trade_date_hist_sina.py
