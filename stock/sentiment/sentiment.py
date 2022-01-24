@@ -1,5 +1,5 @@
 from stock.sentiment.sentiment_analyse import SentimentAnalyse
-from stock.utils import is_trade_day, logger
+from stock.utils import is_trade_day, logger, register
 
 
 class Sentiment:
@@ -10,6 +10,7 @@ class Sentiment:
     def run(self):
         if is_trade_day:
             logger.info("today is trade_date")
+            logger.info(f"{register.keys()}")
             self.sentiment_analyse.run()
             logger.info('结束')
         else:
