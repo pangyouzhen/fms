@@ -11,6 +11,8 @@ class Sentiment:
         if is_trade_day:
             logger.info("today is trade_date")
             logger.info(f"{register.keys()}")
+            for i in register.keys():
+                i.run()
             self.sentiment_analyse.run()
             logger.info('结束')
         else:
