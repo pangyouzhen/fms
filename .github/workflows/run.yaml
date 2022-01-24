@@ -12,6 +12,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script:
-            docker images | grep stock | xargs docker rmi
+          script: |
+            docker images | grep stock | awk '{print $3}' | xargs docker rmi
             docker build ./docker
