@@ -16,6 +16,8 @@ jobs:
           # 自己的私钥
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script:
+          script: |
 #            docker images | grep stock | xargs docker rmi
-            docker build -t stock:v1 ./docker
+#            docker build -t stock:v1 ./docker
+              ifconfig
+              whoami
