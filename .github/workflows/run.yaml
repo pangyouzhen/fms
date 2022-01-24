@@ -16,7 +16,11 @@ jobs:
           # 自己的私钥
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script:
+          script: |
 #            docker images | grep stock | xargs docker rmi
 #            docker build -t stock:v1 ./docker
               curl cip.cc
+              mkdir -p /tmp/temp/stock
+              git clone git@github.com:pangyouzhen/fms.git
+              cd fms
+              docker build -t stock:v1 ./docker
