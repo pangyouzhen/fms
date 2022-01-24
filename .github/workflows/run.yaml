@@ -5,6 +5,9 @@ jobs:
     name: build
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@dev
+
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
@@ -14,5 +17,5 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            docker images | grep stock | xargs docker rmi
-            docker build ./docker
+#            docker images | grep stock | xargs docker rmi
+            docker build -t stock:v1 ./docker
