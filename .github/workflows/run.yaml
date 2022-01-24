@@ -1,17 +1,17 @@
 name: run
 on: push
 jobs:
-  name: build
-  runs-on: ubuntu-latest
-  steps:
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
-        script:
-          docker images | grep stock | xargs docker rmi
-          docker build ./docker
-
+  my_first_job:
+    name: My first job
+    runs-on: ubuntu-latest
+    steps:
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script:
+            docker images | grep stock | xargs docker rmi
+            docker build ./docker
