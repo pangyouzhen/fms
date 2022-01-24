@@ -10,8 +10,9 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
+          # 自己的私钥
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            docker images | grep stock | awk '{print $3}' | xargs docker rmi
+#            docker images | grep stock | awk '{print $3}' | xargs docker rmi
             docker build ./docker
