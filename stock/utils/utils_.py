@@ -1,5 +1,4 @@
 from pathlib import Path
-
 from stock.utils.logger_utils import logger
 
 path = Path("./")

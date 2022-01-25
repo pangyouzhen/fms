@@ -3,7 +3,7 @@ from typing import Optional
 from stock.utils import logger
 
 class Data:
-    def __init__(self, date: Optional[str]):
+    def __init__(self, date: Optional[str] = None):
         super().__init__()
         if date is None:
             date = date

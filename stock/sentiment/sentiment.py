@@ -1,5 +1,6 @@
 from stock.sentiment.sentiment_analyse import sentiment_analyse
 from stock.utils import is_trade_day, logger, register
+import stock.data
 
 
 class Sentiment:

@@ -19,7 +19,7 @@ class DateUtils:
         self.is_trade_date = self.today_is_trade_date()
 
     def get_trade_list(self) -> List[str]:
-        trade_date_df = pd.read_csv('./stock/tool_trade_date_hist_sina_df.csv')
+        trade_date_df = pd.read_csv('/data/project/fms/stock/utils/other/tool_trade_date_hist_sina_df.csv')
         return trade_date_df["trade_date"].tolist()
 
     # 获取上一个交易日

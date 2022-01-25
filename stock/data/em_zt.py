@@ -4,7 +4,7 @@ from stock.data.data import Data
 from stock.utils import *
 
 
-# @register.register("zt_data")
+@register.register("zt_data")
 class ZtData(Data):
     # 获取原始数据
     def __init__(self, date):
