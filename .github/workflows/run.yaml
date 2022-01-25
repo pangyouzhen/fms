@@ -8,19 +8,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
-      - name: executing remote ssh commands using password
+      - name: multiple command
         uses: appleboy/ssh-action@master
-        with: 
+        with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          # 自己的私钥
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-#            docker images | grep stock | xargs docker rmi
-#            docker build -t stock:v1 ./docker
-              curl cip.cc
-              mkdir -p /tmp/temp/stock
-              git clone git@github.com:pangyouzhen/fms.git
-              cd fms
-              docker build -t stock:v1 ./docker
+            whoami
+            ls -al
