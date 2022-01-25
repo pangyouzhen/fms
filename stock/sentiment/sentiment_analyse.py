@@ -1,4 +1,3 @@
-import datetime
 import math
 
 import pandas as pd
@@ -127,7 +126,4 @@ class SentimentAnalyse:
         res.to_csv("%s/stock.csv", encoding="utf-8")
 
 
-if __name__ == '__main__':
-    input_date = datetime.date(year=2021, month=3, day=11)
-    sentiment_analyse = SentimentAnalyse()
-    sentiment_analyse.run()
+sentiment_analyse = SentimentAnalyse()
