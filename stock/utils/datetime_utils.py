@@ -33,6 +33,6 @@ class DateUtils:
             return True
         return False
 
-date = DateUtils().input_date
+input_date = DateUtils().input_date
 last_trade = DateUtils().last_trade_date
 is_trade_day = DateUtils().is_trade_date

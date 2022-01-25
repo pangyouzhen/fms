@@ -10,8 +10,9 @@ class Sentiment:
             logger.info("today is trade_date")
             logger.info(f"{register.keys()}")
             for i in register.keys():
-                i.run()
-            sentiment_analyse.run()
+                print(register[i])
+                register[i].run()
+            # sentiment_analyse.run()
             logger.info('结束')
         else:
             logger.info("不是交易日，略过")

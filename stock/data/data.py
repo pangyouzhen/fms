@@ -1,13 +1,9 @@
-from typing import Optional
-
-from stock.utils import logger
+from stock.utils import input_date, logger
 
 class Data:
-    def __init__(self, date: Optional[str] = None):
+    def __init__(self):
         super().__init__()
-        if date is None:
-            date = date
-        self.date = date
+        self.date = input_date 
 
     @logger.catch
     def get_data(self):

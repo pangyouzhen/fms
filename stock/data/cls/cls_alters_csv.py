@@ -1,5 +1,6 @@
 import json
 from datetime import datetime
+from typing import Optional
 
 import pandas as pd
 import requests
@@ -11,9 +12,10 @@ from stock.utils import *
 
 @register.register("cls_alter")
 class ClsAlterCsv(Data):
-    def __init__(self, date: str):
-        super().__init__(date)
-
+    
+    def __init__(self):
+        super().__init__()
+        
     def get_data(self):
         payload = json.dumps(
             {
@@ -42,4 +44,4 @@ class ClsAlterCsv(Data):
         return self.df
 
     def save(self, **kwargs):
-        self.df.to_csv(f"./raw_data/qucik_{date}.txt", encoding="utf-8")
+        self.df.to_csv(f"./raw_data/qucik_{self.date}.txt", encoding="utf-8")

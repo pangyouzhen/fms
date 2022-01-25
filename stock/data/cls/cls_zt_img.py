@@ -8,14 +8,15 @@ from bs4 import BeautifulSoup
 
 from stock.data.cls.cls import *
 from stock.data.data import Data
-from stock.utils import *
+from stock.utils import input_date,register,logger
 
 
 @register.register("cls_zt")
 class ClsZtImg(Data):
-    def __init__(self, date: str):
-        super().__init__(date)
-        year, month, day = date.split()
+
+    def __init__(self):
+        super().__init__()
+        year, month, day = input_date.split("-")
         self.today_cn = "%s月%s日" % (int(month), int(day))
 
     def get_data(self):
@@ -57,12 +58,12 @@ class ClsZtImg(Data):
             logger.info("获取的数据为空")
 
     def save(self, obj):
-        with open(f'./img/{date}.png', 'wb') as file:
+        with open(f'./img/{self.date}.png', 'wb') as file:
             file.write(self.html.content)
         logger.info("保存文件完成")
 
     def time_compare(self, img_time_stamp: float):
-        timestamp: float = time.mktime(date.timetuple())
+        timestamp: float = time.mktime(self.date.timetuple())
         if img_time_stamp > timestamp:
             return True
         else:

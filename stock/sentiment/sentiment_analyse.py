@@ -2,7 +2,7 @@ import math
 
 import pandas as pd
 
-from stock.utils import logger, date
+from stock.utils import logger, input_date
 from stock.utils.utils_ import path
 
 
@@ -113,7 +113,7 @@ class SentimentAnalyse:
                 "2连板个股": ";".join(limit_up_df_two["名称"].tolist()),
                 "连板": limit_up_df_one.shape[0],
             },
-            index=[date]
+            index=[input_date]
         )
         main_stock = main_stock.append(today_df)
         return main_stock
