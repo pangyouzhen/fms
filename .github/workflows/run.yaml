@@ -16,6 +16,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            mkdir -p /tmp/tmp/
+            mkdir -p /tmp/tmp/tmp
+            cd /tmp/tmp/tmp
             git clone git@github.com:pangyouzhen/fms.git
-            
+
