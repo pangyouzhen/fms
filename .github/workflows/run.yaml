@@ -21,3 +21,4 @@ jobs:
             cd /tmp/tmp/tmp
             git clone -b dev git@github.com:pangyouzhen/fms.git
             docker build -t fms:0.1 ./fms/docker
+            docker run -it -d fms:0.1

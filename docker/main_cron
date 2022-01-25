@@ -1,2 +1,2 @@
-00 19 * * * cd /tmp/tmp/tmp/fms && python main.py >> ~/run.log
-0 0 1 1 * cd /tmp/tmp/tmp/fms && python ./stock/get_tool_trade_date_hist_sina.py
+00 19 * * * cd /data/project/fms && python main.py >> ~/run.log
+0 0 1 1 * cd /data/project/fms && python ./stock/get_tool_trade_date_hist_sina.py
