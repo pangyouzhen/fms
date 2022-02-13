@@ -14,6 +14,7 @@ class ZtData(Data):
         
     def get_data(self):
         today = self.date.replace("-", "")
+        # 东方财富涨停股池
         self.stock_em_zt_pool_df = ak.stock_em_zt_pool(today)
 
     def save(self,obj):

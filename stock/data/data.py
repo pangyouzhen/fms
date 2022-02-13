@@ -18,7 +18,7 @@ class Data:
         pass
 
     @logger.catch
-    def run(self):
+    def get_save_data(self):
         obj = self.get_data()
         if obj:
             return self.save(obj)

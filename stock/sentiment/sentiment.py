@@ -10,8 +10,8 @@ class Sentiment:
             logger.info("today is trade_date")
             logger.info(f"{register.keys()}")
             for i in register.keys():
-                print(register[i])
-                register[i].run()
+                # logger.info(dir(register[i]))
+                register[i].get_save_data()
             # sentiment_analyse.run()
             logger.info('结束')
         else:
